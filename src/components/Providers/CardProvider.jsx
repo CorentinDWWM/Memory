@@ -29,29 +29,16 @@ export default function CardProvider({ children }) {
   const [cards, setCards] = useState(generateCards());
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
-  const [allFlippedCards, setAllFlippedCards] = useState(0);
+  const [score, setScore] = useState(0);
 
   // gestion du score
 
-  let score = 0;
+  const handleMatch = () => {
+    setScore((prevScore) => prevScore + 100);
+  };
 
-  const handleScore = () => {
-    if (allFlippedCards === 2) {
-      score += 100;
-      setAllFlippedCards(0);
-    } else if (allFlippedCards === 4) {
-      score += 80;
-      setAllFlippedCards(0);
-    } else if (allFlippedCards === 6) {
-      score += 60;
-      setAllFlippedCards(0);
-    } else if (allFlippedCards === 8) {
-      score += 40;
-      setAllFlippedCards(0);
-    } else if (allFlippedCards >= 10) {
-      score += 20;
-      setAllFlippedCards(0);
-    }
+  const handleIncorrectMatch = () => {
+    setScore((prevScore) => prevScore - 10);
   };
 
   // gestion des cartes retournés
@@ -66,7 +53,7 @@ export default function CardProvider({ children }) {
           )
         );
         setMatchedPairs((prev) => prev + 1);
-        handleScore();
+        handleMatch();
       } else {
         setTimeout(() => {
           setCards((prevCards) =>
@@ -77,6 +64,7 @@ export default function CardProvider({ children }) {
             )
           );
         }, 1000);
+        handleIncorrectMatch();
       }
       setFlippedCards([]);
     }
@@ -98,12 +86,18 @@ export default function CardProvider({ children }) {
     setCards(generateCards());
     setFlippedCards([]);
     setMatchedPairs(0);
-    score = 0;
+    setScore(0);
   };
 
   return (
     <CardContext.Provider
-      value={{ cards, resetGame, handleCardClick, matchedPairs }}
+      value={{
+        cards,
+        resetGame,
+        handleCardClick,
+        matchedPairs,
+        score,
+      }}
     >
       {children}
     </CardContext.Provider>

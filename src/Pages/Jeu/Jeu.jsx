@@ -3,8 +3,7 @@ import { CardContext } from "../../context/CardContext";
 import Table from "../../components/Table/Table";
 
 export default function Jeu() {
-  const { cards, matchedPairs, resetGame } = useContext(CardContext);
-  console.log(cards);
+  const { cards, matchedPairs } = useContext(CardContext);
   return (
     <div className="table mhFull wFull d-flex center flex-column ta-center">
       {matchedPairs === cards.length / 2 && (

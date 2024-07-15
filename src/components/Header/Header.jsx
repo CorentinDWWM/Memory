@@ -4,12 +4,12 @@ import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
 
 function Header() {
-  const { resetGame } = useContext(CardContext);
+  const { resetGame, score } = useContext(CardContext);
   const location = useLocation();
   return (
     <header className={`${styles.header} d-flex flex-row align-items-center`}>
       <div className={`d-flex flex-fill center ${styles.divScore}`}>
-        <h1>test</h1>
+        <p>{score}</p>
       </div>
       <div className="d-flex flex-rr">
         <div>
