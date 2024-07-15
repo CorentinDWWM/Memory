@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Card.module.scss";
 import { CardContext } from "../../context/CardContext";
-import carte from "../../assets/img/LasVegas.jpg";
+import carte from "../../assets/img/LasVegas2.jpg";
 
 export default function Card({ card, isFlipped, isMatched }) {
   const { handleCardClick } = useContext(CardContext);
