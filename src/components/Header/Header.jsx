@@ -9,11 +9,13 @@ function Header() {
   return (
     <header className={`${styles.header} d-flex flex-row align-items-center`}>
       <div className={`d-flex flex-fill center ${styles.divScore}`}>
-        <p>{score}</p>
+        {location.pathname === "/game" ? <p>{score}</p> : null}
       </div>
       <div className="d-flex flex-rr">
         <div>
-          <Link to="/">Accueil</Link>
+          <Link to="/" onClick={resetGame}>
+            Accueil
+          </Link>
           {location.pathname === "/game" ? (
             <a className="ml-15" onClick={resetGame}>
               Recommencer
