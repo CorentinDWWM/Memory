@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Card.module.scss";
 import { CardContext } from "../../context/CardContext";
+import carte from "../../assets/img/LasVegas.jpg";
 
 export default function Card({ card, isFlipped, isMatched }) {
   const { handleCardClick } = useContext(CardContext);
@@ -12,7 +13,11 @@ export default function Card({ card, isFlipped, isMatched }) {
       onClick={() => handleCardClick(card)}
     >
       <div className={`${styles.card_inner}`}>
-        <div className={`${styles.card_front}`}>?</div>
+        <img
+          src={carte}
+          alt="dos de carte"
+          className={`${styles.card_front}`}
+        />
         <div className={`${styles.card_back}`}>{card.dev}</div>
       </div>
     </div>
