@@ -5,11 +5,12 @@
   grid-template-columns: repeat(4, 150px);
   gap: 100px;
   justify-content: center;
-  margin: 20px 0px;
+  margin: 40px 0px;
   width: 100%;
 
   @include mixin.md-lt {
     grid-template-columns: repeat(3, 150px);
+    align-items: center;
   }
 
   @include mixin.sm-lt {

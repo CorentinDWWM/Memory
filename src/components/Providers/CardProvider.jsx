@@ -16,6 +16,8 @@ export default function CardProvider({ children }) {
       "Trello",
       "Figma",
       "WordPress",
+      "JMerise",
+      "Tailwind",
     ];
     const cards = devs.concat(devs).map((dev, index) => ({
       id: index,
