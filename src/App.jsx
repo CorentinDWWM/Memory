@@ -7,7 +7,7 @@ import CardProvider from "./components/Providers/CardProvider";
 function App() {
   return (
     <>
-      <div className={`d-flex center flex-column ${styles.appContainer}`}>
+      <div className={`d-flex center flex-column`}>
         <CardProvider>
           <Header />
           <Outlet />
