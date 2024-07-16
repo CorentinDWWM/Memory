@@ -1,0 +1,30 @@
+@use "../../../assets/styles/mixins" as mixin;
+
+.container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 200px;
+  background-color: black;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  z-index: 1;
+
+  @include mixin.sm {
+    width: 100%;
+  }
+
+  .btnNav {
+    background-color: var(--pink-1);
+    color: white;
+    text-align: end;
+    padding: 10px 0px 10px 0px;
+    cursor: pointer;
+  }
+
+  i {
+    // font-size: 60px;
+    cursor: pointer;
+    text-align: end;
+  }
+}

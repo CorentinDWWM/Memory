@@ -1,3 +1,5 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .board {
   display: grid;
   grid-template-columns: repeat(4, 150px);
@@ -5,4 +7,16 @@
   justify-content: center;
   margin: 20px 0px;
   width: 100%;
+
+  @include mixin.md-lt {
+    grid-template-columns: repeat(3, 150px);
+  }
+
+  @include mixin.sm-lt {
+    grid-template-columns: repeat(2, 150px);
+  }
+
+  @include mixin.xs {
+    grid-template-columns: repeat(1, 150px);
+  }
 }
