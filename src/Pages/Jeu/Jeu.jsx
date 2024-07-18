@@ -7,6 +7,7 @@ export default function Jeu() {
   const [isMobile, setIsMobile] = useState(false);
   const [isPortrait, setIsPortrait] = useState(false);
 
+  // pour le mode paysage
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 500);
   };

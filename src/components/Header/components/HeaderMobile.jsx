@@ -7,6 +7,7 @@ export default function HeaderMobile({ setShowMenu }) {
   const { resetGame } = useContext(CardContext);
   const location = useLocation();
 
+  // pour faire deux handleClick en un
   const handleClick = () => {
     setShowMenu(false);
     resetGame();

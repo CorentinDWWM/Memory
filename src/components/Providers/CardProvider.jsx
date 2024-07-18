@@ -72,6 +72,7 @@ export default function CardProvider({ children }) {
     }
   }, [flippedCards]);
 
+  // gestion du click sur une carte
   const handleCardClick = (card) => {
     if (card.isFlipped || flippedCards.length === 2) {
       return;

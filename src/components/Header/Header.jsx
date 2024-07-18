@@ -14,7 +14,7 @@ function Header() {
       <div className={`d-flex flex-fill center ${styles.divScore}`}>
         {location.pathname === "/game" ? <p>{score}</p> : null}
       </div>
-      <div className={`${styles.responsive} d-flex flex-rr`}>
+      <div className={`${styles.responsive} d-flex`}>
         <div>
           <Link to="/" onClick={resetGame}>
             Accueil
