@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
 import { CardContext } from "../../context/CardContext";
+import { datas } from "../../data";
 
 export default function CardProvider({ children }) {
+  const [devs, setDevs] = useState(datas);
   // génération des cartes aléatoirements
 
   const generateCards = () => {
-    const devs = [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Docker",
-      "Git",
-      "GitHub",
-      "Excel",
-      "Trello",
-      "Figma",
-      "WordPress",
-      "JMerise",
-      "Tailwind",
-    ];
     const cards = devs.concat(devs).map((dev, index) => ({
       id: index,
       dev,

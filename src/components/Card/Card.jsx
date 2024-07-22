@@ -18,7 +18,9 @@ export default function Card({ card, isFlipped, isMatched }) {
           alt="dos de carte"
           className={`${styles.card_front}`}
         />
-        <div className={`${styles.card_back}`}>{card.dev}</div>
+        <div className={`${styles.card_back}`}>
+          <img src={card.dev} alt="reponse" />
+        </div>
       </div>
     </div>
   );

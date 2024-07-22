@@ -17,8 +17,8 @@
   }
 
   @include mixin.xs {
-    width: 60px;
-    height: 90px;
+    width: 50px;
+    height: 70px;
   }
 }
 
@@ -48,7 +48,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // font-size: 1.6rem;
+
+  img {
+    width: 70%;
+  }
 }
 
 .card_back {

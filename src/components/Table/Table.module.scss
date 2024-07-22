@@ -19,9 +19,11 @@
 
   @include mixin.sm-lt {
     grid-template-columns: repeat(4, 70px);
+    gap: 50px;
   }
 
   @include mixin.xs {
-    grid-template-columns: repeat(4, 60px);
+    grid-template-columns: repeat(4, 50px);
+    gap: 20px;
   }
 }
