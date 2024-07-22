@@ -53,7 +53,7 @@ export default function CardProvider({ children }) {
                 : card
             )
           );
-        }, 1000);
+        }, 2000);
         handleIncorrectMatch();
       }
       setFlippedCards([]);
