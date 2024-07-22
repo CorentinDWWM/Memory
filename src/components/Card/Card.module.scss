@@ -1,8 +1,25 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .card {
-  width: 150px;
-  height: 200px;
+  width: 100px;
+  height: 150px;
   perspective: 1000px;
   cursor: pointer;
+
+  @include mixin.md-lt {
+    width: 90px;
+    height: 130px;
+  }
+
+  @include mixin.sm-lt {
+    width: 70px;
+    height: 100px;
+  }
+
+  @include mixin.xs {
+    width: 60px;
+    height: 90px;
+  }
 }
 
 .card.flipped .card_inner {
@@ -31,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  // font-size: 1.6rem;
 }
 
 .card_back {

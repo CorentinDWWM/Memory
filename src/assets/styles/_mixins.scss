@@ -1,5 +1,5 @@
 @mixin xs {
-  @media (max-width: 500px) {
+  @media (max-width: 400px) {
     @content;
   }
 }
@@ -41,7 +41,7 @@
 }
 
 @mixin xl {
-  @media (min-width: 1201px) {
+  @media (max-width: 1400px) {
     @content;
   }
 }

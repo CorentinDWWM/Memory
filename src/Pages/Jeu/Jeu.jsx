@@ -31,7 +31,7 @@ export default function Jeu() {
 
   return (
     <div className="table mhFull wFull d-flex center flex-column ta-center">
-      {isMobile ? (
+      {/* {isMobile ? (
         <div
           style={{
             position: "fixed",
@@ -49,21 +49,21 @@ export default function Jeu() {
         >
           <p>Veuillez tourner votre appareil en mode paysage</p>
         </div>
-      ) : isPortrait ? (
-        <div>
-          {matchedPairs === cards.length / 2 && (
-            <h2 className="mt-10">Vous avez gagné !</h2>
-          )}
-          <Table />
-        </div>
-      ) : (
-        <div>
-          {matchedPairs === cards.length / 2 && (
-            <h2 className="mt-10">Vous avez gagné !</h2>
-          )}
-          <Table />
-        </div>
-      )}
+      ) : isPortrait ? ( */}
+      {/* <div>
+        {matchedPairs === cards.length / 2 && (
+          <h2 className="mt-10">Vous avez gagné !</h2>
+        )}
+        <Table />
+      </div> */}
+      {/* ) : ( */}
+      <div>
+        {matchedPairs === cards.length / 2 && (
+          <h2 className="mt-10">Vous avez gagné !</h2>
+        )}
+        <Table />
+      </div>
+      {/* )} */}
     </div>
   );
 }
