@@ -20,6 +20,7 @@ export default function CardProvider({ children }) {
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [score, setScore] = useState(0);
+  const [isChecking, setIsChecking] = useState(false);
 
   // gestion du score
 
@@ -35,6 +36,7 @@ export default function CardProvider({ children }) {
 
   useEffect(() => {
     if (flippedCards.length === 2) {
+      setIsChecking(true);
       const [firstCard, secondCard] = flippedCards;
       if (firstCard.dev === secondCard.dev) {
         setCards((prevCards) =>
@@ -44,6 +46,7 @@ export default function CardProvider({ children }) {
         );
         setMatchedPairs((prev) => prev + 1);
         handleMatch();
+        setIsChecking(false);
       } else {
         setTimeout(() => {
           setCards((prevCards) =>
@@ -53,6 +56,7 @@ export default function CardProvider({ children }) {
                 : card
             )
           );
+          setIsChecking(false);
         }, 2000);
         handleIncorrectMatch();
       }
@@ -62,7 +66,7 @@ export default function CardProvider({ children }) {
 
   // gestion du click sur une carte
   const handleCardClick = (card) => {
-    if (card.isFlipped || flippedCards.length === 2) {
+    if (card.isFlipped || flippedCards.length === 2 || isChecking) {
       return;
     }
     setCards((prevCards) =>
